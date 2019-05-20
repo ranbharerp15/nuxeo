@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.platform.convert.tests.bypass.converter">
+  <require>org.nuxeo.ecm.platform.convert.plugins</require>
+  <extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl" point="converter">
+
+    <converter name="testBypassTrue" class="org.nuxeo.ecm.platform.convert.tests.LibreOfficeConverterForTest"
+               bypassIfSameMimeType="true">
+      <destinationMimeType>application/pdf</destinationMimeType>
+      <sourceMimeType>application/pdf</sourceMimeType>
+    </converter>
+
+    <converter name="testBypassFalse" class="org.nuxeo.ecm.platform.convert.tests.LibreOfficeConverterForTest"
+               bypassIfSameMimeType="false">
+      <destinationMimeType>application/pdf</destinationMimeType>
+      <sourceMimeType>application/pdf</sourceMimeType>
+    </converter>
+
+    <converter name="testBypassDefault" class="org.nuxeo.ecm.platform.convert.tests.LibreOfficeConverterForTest">
+      <destinationMimeType>application/pdf</destinationMimeType>
+      <sourceMimeType>application/pdf</sourceMimeType>
+    </converter>
+
+  </extension>
+</component>
